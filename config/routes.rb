@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+	namespace :v1 do
+		resources :categories, only: [:index, :show] do 
+			resources :tweets, shallow: true, only: [:index, :show]
+		end
+	end
 end

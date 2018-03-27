@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180327192225) do
+ActiveRecord::Schema.define(version: 20180327194326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20180327192225) do
     t.integer "retweet_count"
     t.boolean "media?"
     t.string "profile_image_url"
-    t.boolean "verified"
     t.string "tweet_url"
+    t.boolean "verified?"
     t.index ["category_id"], name: "index_tweets_on_category_id"
   end
 
