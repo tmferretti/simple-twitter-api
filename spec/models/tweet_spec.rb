@@ -10,5 +10,9 @@ RSpec.describe Tweet, type: :model do
 	it { should validate_presence_of(:user) }
 	it { should validate_presence_of(:date_posted) }
 	it { should validate_presence_of(:text) }
+	it { should validate_presence_of(:profile_image_url) }
+	it { should validate_presence_of(:favorite_count) }
+	it { should validate_presence_of(:retweet_count) }
+	it { should validate_presence_of(:tweet_url) }
 
 end

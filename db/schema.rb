@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180327170933) do
+ActiveRecord::Schema.define(version: 20180327192225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,12 @@ ActiveRecord::Schema.define(version: 20180327170933) do
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "favorite_count"
+    t.integer "retweet_count"
+    t.boolean "media?"
+    t.string "profile_image_url"
+    t.boolean "verified"
+    t.string "tweet_url"
     t.index ["category_id"], name: "index_tweets_on_category_id"
   end
 
