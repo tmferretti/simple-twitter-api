@@ -10,5 +10,5 @@ json.array! @tweets do |tweet|
 	json.text tweet.text
 	json.profile_image_url tweet.profile_image_url
 	json.tweet_url tweet.tweet_url
-	json.verified? tweet.verified? 
+	json.verified tweet.verified
 end

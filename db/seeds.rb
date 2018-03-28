@@ -27,7 +27,7 @@ Category.create(
 
 
 Category.all.each do |category|
-    client.search("#{category.hashtag} -rt", options = {lang: "en", tweet_mode: "extended" }).first(10).each do |tweet|
+    client.search("#{category.hashtag} -rt", options = {lang: "en", tweet_mode: "extended", result_type: "popular" }).first(10).each do |tweet|
         tweet1 = Tweet.new(
             name: tweet.user.name,
             user: tweet.user.screen_name,
@@ -37,7 +37,7 @@ Category.all.each do |category|
             favorite_count: tweet.favorite_count,
             retweet_count: tweet.retweet_count,
             media?: tweet.media?,
-            verified?: tweet.user.attrs[:verified],
+            verified: tweet.user.attrs[:verified],
             tweet_url: tweet.uri,
             profile_image_url: tweet.user.profile_image_uri
         )
