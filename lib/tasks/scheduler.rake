@@ -29,5 +29,9 @@ task get_daily_tweets: :environment do
 		end
 	end
 
+	Category.all.each do |category|
+		category.tweets.each { |tweet| tweet.update(isActive: false) }
+	end
+	
 	Category.first.tweets.last(10).each { |tweet| tweet.update(isActive: true) }
 end
