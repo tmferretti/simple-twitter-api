@@ -13,7 +13,7 @@ namespace :twitter_scrape do
 		        tweet1 = Tweet.new(
 		            name: tweet.user.name,
 		            user: tweet.user.screen_name,
-		            text: tweet.attrs[:full_text],
+		            text: tweet.text,
 		            date_posted: tweet.created_at,
 		            category_id: category.id,
 		            favorite_count: tweet.favorite_count,
