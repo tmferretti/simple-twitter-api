@@ -106,3 +106,9 @@ end
 Category.first.tweets.each do |tweet|
   tweet.update(isActive: true)
 end
+
+# Category.all.each do |category|
+#   category.tweets.each do |tweet|
+#     tweet.update()
+#   end
+# end
