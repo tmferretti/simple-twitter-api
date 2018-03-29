@@ -31,8 +31,7 @@ gem 'figaro', '~> 1.1.1'
 # Use whenever to schedule twitter scrape
 # gem 'whenever', '~> 0.10.0', :require => false
 gem 'twitter', '~> 6.2.0'
-# gem 'omniauth-twitter', '~> 1.4.0'
-gem 'seed_dump'
+
 
 
 group :development, :test do
