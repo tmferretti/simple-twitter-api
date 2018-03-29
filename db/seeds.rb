@@ -64,19 +64,19 @@ end
 Category.create(
     name: "Space Exploration",
     hashtag: "#SpaceExploration",
-    isActive: true
+    is_active: true
   )
 
 Category.create(
     name: "Artificial Intelligence",
     hashtag: "#ArtificialIntelligence",
-    isActive: false
+    is_active: false
   )
 
 Category.create(
     name: "Tesla",
     hashtag: "#Tesla",
-    isActive: false
+    is_active: false
   )
 
 
