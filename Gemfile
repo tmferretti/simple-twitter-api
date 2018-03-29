@@ -31,7 +31,7 @@ gem 'figaro', '~> 1.1.1'
 # Use whenever to schedule twitter scrape
 # gem 'whenever', '~> 0.10.0', :require => false
 gem 'twitter', '~> 6.2.0'
-
+gem 'rack-cors', :require => 'rack/cors'
 
 
 group :development, :test do
