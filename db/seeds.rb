@@ -39,7 +39,8 @@
 #             media?: tweet.media?,
 #             verified: tweet.user.attrs[:verified],
 #             tweet_url: tweet.uri,
-#             profile_image_url: tweet.user.profile_image_uri
+#             profile_image_url: tweet.user.profile_image_uri,
+#             isActive: false
 #         )
 
 #         if tweet1.save == false
@@ -47,3 +48,25 @@
 #         end
 #     end
 # end
+
+Category.all.each do |category|
+	category.tweets.each do |tweet|
+		# p tweet.date_posted.class
+		# new_date = Date.parse tweet.date_posted
+		# p new_date.strftime("%b %e, %l:%M %p")
+		# tweet.update(date_posted: new_date)
+	end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+

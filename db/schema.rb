@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180328223156) do
+ActiveRecord::Schema.define(version: 20180329003918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20180328223156) do
     t.string "hashtag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "is_active"
   end
 
   create_table "tweets", force: :cascade do |t|
@@ -37,6 +36,7 @@ ActiveRecord::Schema.define(version: 20180328223156) do
     t.string "tweet_url"
     t.string "date_posted"
     t.boolean "verified"
+    t.boolean "isActive"
     t.index ["category_id"], name: "index_tweets_on_category_id"
   end
 
