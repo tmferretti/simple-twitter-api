@@ -81,7 +81,7 @@ Category.create(
 
 
 Category.all.each do |category|
-    client.search("#{category.name} -rt", options = {lang: "en", tweet_mode: "extended", result_type: "popular" }).first(30).each do |tweet|
+    client.search("#{category.name} -rt", options = {lang: "en", tweet_mode: "extended", result_type: "popular" }).first(10).each do |tweet|
         tweet1 = Tweet.new(
             name: tweet.user.name,
             user: tweet.user.screen_name,
