@@ -9,26 +9,26 @@ namespace :twitter_scrape do
 		end
 
 		Category.all.each do |category|
-			client.search("#{category.name} -rt", lang: "en").first(10).each do |tweet|
-				tweet1 = Tweet.new(
-	          name: tweet.user.name,
-	          user: tweet.user.screen_name,
-	          text: tweet.attrs[:full_text],
-	          date_posted: tweet.created_at,
-	          category_id: category.id,
-	          favorite_count: tweet.favorite_count,
-	          retweet_count: tweet.retweet_count,
-	          media?: tweet.media?,
-	          verified: tweet.user.attrs[:verified],
-	          tweet_url: tweet.uri,
-	          profile_image_url: tweet.user.profile_image_uri,
-	          isActive: false
-	      )
+		    client.search("#{category.name} -rt", options = {lang: "en", tweet_mode: "extended", result_type: "popular" }).first(10).each do |tweet|
+		        tweet1 = Tweet.new(
+		            name: tweet.user.name,
+		            user: tweet.user.screen_name,
+		            text: tweet.attrs[:full_text],
+		            date_posted: tweet.created_at,
+		            category_id: category.id,
+		            favorite_count: tweet.favorite_count,
+		            retweet_count: tweet.retweet_count,
+		            media?: tweet.media?,
+		            verified: tweet.user.attrs[:verified],
+		            tweet_url: tweet.uri,
+		            profile_image_url: tweet.user.profile_image_uri,
+		            isActive: false
+		        )
 
 	      if tweet1.save == false
 	        p tweet1.errors
 	      end
-			end
+		  end
 		end
 
 		Category.first.tweets.last(10).each { |tweet| tweet.update(isActive: true) }
