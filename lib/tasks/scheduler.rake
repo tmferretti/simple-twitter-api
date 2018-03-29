@@ -11,7 +11,7 @@ task get_daily_tweets: :environment do
 			tweet1 = Tweet.new(
           name: tweet.user.name,
           user: tweet.user.screen_name,
-          text: tweet.attrs[:full_text],
+          text: tweet.text,
           date_posted: tweet.created_at,
           category_id: category.id,
           favorite_count: tweet.favorite_count,
@@ -32,6 +32,6 @@ task get_daily_tweets: :environment do
 	Category.all.each do |category|
 		category.tweets.each { |tweet| tweet.update(isActive: false) }
 	end
-	
+
 	Category.first.tweets.last(10).each { |tweet| tweet.update(isActive: true) }
 end
