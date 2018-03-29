@@ -103,12 +103,4 @@ Category.all.each do |category|
     end
 end
 
-Category.first.tweets.each do |tweet|
-  tweet.update(isActive: true)
-end
-
-# Category.all.each do |category|
-#   category.tweets.each do |tweet|
-#     tweet.update()
-#   end
-# end
+Category.first.tweets.last(10).each { |tweet| tweet.update(isActive: true) }
