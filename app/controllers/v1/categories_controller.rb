@@ -1,7 +1,7 @@
 class V1::CategoriesController < ApplicationController
 
 	def index
-		@categories = Category.all
+		@categories = Category.all.last(10)
 		render 'index.json.jbuilder'
 	end
 
